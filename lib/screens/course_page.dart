@@ -22,6 +22,14 @@ class _CoursePageState extends State<CoursePage> {
     LCOblue
   ];
 
+  List<Color> bundleListColor = [
+    LCOlightgreen,
+    LCOgreen,
+    LCOblue,
+    LCOorange,
+    LCOred
+  ];
+
   List<List<String>> courseList = [
     [
       "assets/images/img-1.png",
@@ -50,33 +58,68 @@ class _CoursePageState extends State<CoursePage> {
     ]
   ];
 
+  List<List<String>> bundleList = [
+    [
+      "assets/images/img-3.png",
+      "Android P and Java",
+      "2.5",
+    ],
+    [
+      "assets/images/img-5.png",
+      "Flutter Dart Bundle",
+      "2.5",
+    ],
+    [
+      "assets/images/img-1.png",
+      "Front End + Node Js",
+      "10.5",
+    ],
+    [
+      "assets/images/img-2.png",
+      "Front End + Django",
+      "8.5",
+    ],
+    [
+      "assets/images/img-4.png",
+      "React Native",
+      "8.5",
+    ]
+  ];
+
   List<List<String>> testList = [
     [
-      "assets/images/img-test.png",
       "C++ Test",
       "1.5",
     ],
     [
-      "assets/images/img-test.png",
       "Aptitude Test",
       "2.5",
     ],
     [
-      "assets/images/img-test.png",
       "Java Interview Prep",
       "10.5",
     ],
     [
-      "assets/images/img-test.png",
       "Mock Interview",
       "8.5",
     ],
     [
-      "assets/images/img-test.png",
       "Youtuber Prep",
       "8.5",
     ]
   ];
+
+  @override
+  void initState() {
+    super.initState();
+    setState(() {
+      courseListColor.shuffle();
+      bundleListColor.shuffle();
+      courseList.shuffle();
+      bundleList.shuffle();
+      testList.shuffle();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -98,7 +141,7 @@ class _CoursePageState extends State<CoursePage> {
                 ),
               ),
               Container(
-                height: MediaQuery.of(context).size.height / 1.2,
+                height: MediaQuery.of(context).size.height / 1.4,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   shrinkWrap: true,
@@ -128,7 +171,7 @@ class _CoursePageState extends State<CoursePage> {
                 ),
               ),
               Container(
-                height: MediaQuery.of(context).size.height / 1.2,
+                height: MediaQuery.of(context).size.height / 1.4,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   shrinkWrap: true,
@@ -137,10 +180,10 @@ class _CoursePageState extends State<CoursePage> {
                     return Padding(
                       padding: EdgeInsets.all(8.0),
                       child: CourseCard(
-                        assetImage: courseList[index][0],
-                        courseName: courseList[index][1],
-                        coursePrice: courseList[index][2],
-                        bgColor: courseListColor[index],
+                        assetImage: bundleList[index][0],
+                        courseName: bundleList[index][1],
+                        coursePrice: bundleList[index][2],
+                        bgColor: bundleListColor[index],
                       ),
                     );
                   },
@@ -167,9 +210,8 @@ class _CoursePageState extends State<CoursePage> {
                     return Padding(
                       padding: EdgeInsets.all(8.0),
                       child: TestCard(
-                        assetImage: testList[index][0],
-                        testName: testList[index][1],
-                        testPrice: testList[index][2],
+                        testName: testList[index][0],
+                        testPrice: testList[index][1],
                       ),
                     );
                   },

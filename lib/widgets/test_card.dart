@@ -2,13 +2,11 @@ import 'package:courseappui/colors.dart';
 import 'package:flutter/material.dart';
 
 class TestCard extends StatelessWidget {
-  final String assetImage;
   final String testName;
   final String testPrice;
 
   const TestCard({
     Key key,
-    @required this.assetImage,
     @required this.testName,
     @required this.testPrice,
   }) : super(key: key);
@@ -27,7 +25,7 @@ class TestCard extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(18),
                   image: DecorationImage(
-                    image: AssetImage(assetImage),
+                    image: AssetImage("assets/images/img-test.png"),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -61,7 +59,7 @@ class TestCard extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 36.0,
-                    color: LCOorange,
+                    color: Colors.white,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -69,7 +67,7 @@ class TestCard extends StatelessWidget {
                   "Just \$$testPrice",
                   style: TextStyle(
                     fontSize: 18.0,
-                    color: LCOorange,
+                    color: Colors.white,
                     fontWeight: FontWeight.w300,
                   ),
                 ),

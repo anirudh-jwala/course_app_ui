@@ -1,6 +1,3 @@
-import 'dart:math';
-
-import 'package:courseappui/colors.dart';
 import 'package:flutter/material.dart';
 
 class CourseCard extends StatelessWidget {
@@ -25,7 +22,7 @@ class CourseCard extends StatelessWidget {
         children: <Widget>[
           Container(
             width: 335.0,
-            height: MediaQuery.of(context).size.height / 1.2,
+            height: MediaQuery.of(context).size.height / 1.4,
             decoration: BoxDecoration(
               color: bgColor,
               borderRadius: BorderRadius.circular(18),
