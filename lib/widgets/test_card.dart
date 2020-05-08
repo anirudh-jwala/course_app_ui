@@ -1,4 +1,3 @@
-import 'package:courseappui/colors.dart';
 import 'package:flutter/material.dart';
 
 class TestCard extends StatelessWidget {
