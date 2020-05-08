@@ -1,20 +1,16 @@
-import 'dart:math';
-
 import 'package:courseappui/colors.dart';
 import 'package:flutter/material.dart';
 
-class CourseCard extends StatelessWidget {
+class TestCard extends StatelessWidget {
   final String assetImage;
-  final String courseName;
-  final String coursePrice;
-  final Color bgColor;
+  final String testName;
+  final String testPrice;
 
-  const CourseCard({
+  const TestCard({
     Key key,
     @required this.assetImage,
-    @required this.courseName,
-    @required this.coursePrice,
-    @required this.bgColor,
+    @required this.testName,
+    @required this.testPrice,
   }) : super(key: key);
 
   @override
@@ -23,36 +19,57 @@ class CourseCard extends StatelessWidget {
       child: Stack(
         alignment: Alignment.center,
         children: <Widget>[
-          Container(
-            width: 335.0,
-            height: MediaQuery.of(context).size.height / 1.2,
-            decoration: BoxDecoration(
-              color: bgColor,
-              borderRadius: BorderRadius.circular(18),
-            ),
-          ),
-          Positioned(
-            bottom: 30.0,
-            child: Image.asset(assetImage),
+          Stack(
+            children: <Widget>[
+              Container(
+                width: 335.0,
+                height: MediaQuery.of(context).size.height / 2,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(18),
+                  image: DecorationImage(
+                    image: AssetImage(assetImage),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+              Positioned(
+                bottom: 0.0,
+                child: Container(
+                  width: 335.0,
+                  height: 30.0,
+                  color: Colors.white,
+                  child: Center(
+                    child: Text(
+                      "By Anirudh Jwala",
+                      textAlign: TextAlign.start,
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
           Positioned(
             top: 40.0,
             child: Column(
               children: <Widget>[
                 Text(
-                  courseName,
+                  testName,
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 36.0,
-                    color: Colors.white,
+                    color: LCOorange,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 Text(
-                  "Just \$$coursePrice",
+                  "Just \$$testPrice",
                   style: TextStyle(
                     fontSize: 18.0,
-                    color: Colors.white,
+                    color: LCOorange,
                     fontWeight: FontWeight.w300,
                   ),
                 ),
@@ -60,10 +77,10 @@ class CourseCard extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: 120.0,
+            bottom: 40.0,
             child: FlatButton.icon(
               padding: EdgeInsets.symmetric(vertical: 10, horizontal: 40),
-              color: Colors.white,
+              color: Colors.black,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(30.0),
               ),
@@ -72,32 +89,14 @@ class CourseCard extends StatelessWidget {
               },
               icon: Icon(
                 Icons.exit_to_app,
-                color: bgColor,
+                color: Colors.white,
               ),
               label: Text(
                 "Buy Now",
                 style: TextStyle(
                   fontSize: 18.0,
                   fontWeight: FontWeight.w700,
-                  color: bgColor,
-                ),
-              ),
-            ),
-          ),
-          Positioned(
-            bottom: 0.0,
-            child: Container(
-              width: 335.0,
-              height: 30.0,
-              color: Colors.white,
-              child: Center(
-                child: Text(
-                  "By Anirudh Jwala",
-                  textAlign: TextAlign.start,
-                  style: TextStyle(
-                    color: bgColor,
-                    fontWeight: FontWeight.w600,
-                  ),
+                  color: Colors.white,
                 ),
               ),
             ),

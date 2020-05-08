@@ -1,5 +1,6 @@
 import 'package:courseappui/colors.dart';
 import 'package:courseappui/widgets/course_card.dart';
+import 'package:courseappui/widgets/test_card.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -45,6 +46,34 @@ class _CoursePageState extends State<CoursePage> {
     [
       "assets/images/img-5.png",
       "Node JS course",
+      "8.5",
+    ]
+  ];
+
+  List<List<String>> testList = [
+    [
+      "assets/images/img-test.png",
+      "C++ Test",
+      "1.5",
+    ],
+    [
+      "assets/images/img-test.png",
+      "Aptitude Test",
+      "2.5",
+    ],
+    [
+      "assets/images/img-test.png",
+      "Java Interview Prep",
+      "10.5",
+    ],
+    [
+      "assets/images/img-test.png",
+      "Mock Interview",
+      "8.5",
+    ],
+    [
+      "assets/images/img-test.png",
+      "Youtuber Prep",
       "8.5",
     ]
   ];
@@ -137,11 +166,10 @@ class _CoursePageState extends State<CoursePage> {
                   itemBuilder: (context, index) {
                     return Padding(
                       padding: EdgeInsets.all(8.0),
-                      child: CourseCard(
-                        assetImage: courseList[index][0],
-                        courseName: courseList[index][1],
-                        coursePrice: courseList[index][2],
-                        bgColor: courseListColor[index],
+                      child: TestCard(
+                        assetImage: testList[index][0],
+                        testName: testList[index][1],
+                        testPrice: testList[index][2],
                       ),
                     );
                   },
