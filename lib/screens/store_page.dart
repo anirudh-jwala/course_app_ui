@@ -4,16 +4,12 @@ import 'package:courseappui/widgets/test_card.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class CoursePage extends StatefulWidget {
-  CoursePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
+class StorePage extends StatefulWidget {
   @override
-  _CoursePageState createState() => _CoursePageState();
+  _StorePageState createState() => _StorePageState();
 }
 
-class _CoursePageState extends State<CoursePage> {
+class _StorePageState extends State<StorePage> {
   List<Color> courseListColor = [
     LCOred,
     LCOorange,
